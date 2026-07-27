@@ -1,0 +1,8 @@
+# Pin versions so the saved model loads without warnings.
+# Check your own versions first:  conda list scikit-learn pandas numpy
+flask==3.0.3
+scikit-learn==1.8.0
+pandas==2.2.2
+numpy==1.26.4
+joblib==1.4.2
+gunicorn==22.0.0

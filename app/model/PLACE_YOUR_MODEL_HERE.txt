@@ -1,0 +1,9 @@
+Copy your trained model file into this folder:
+
+    hrs_oop_spending_final_optimized.joblib
+
+It is in your Homework 4 submission at:
+    outputs/models/hrs_oop_spending_final_optimized.joblib
+
+The app loads it from app/model/ at startup.
+Then delete this placeholder file.
