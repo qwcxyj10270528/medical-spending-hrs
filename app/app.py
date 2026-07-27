@@ -1,5 +1,4 @@
 """
-HRS Out-of-Pocket Medical Spending Predictor
 Flask app that serves the tuned model from Assignment 6.
 
 Run locally:
@@ -15,6 +14,55 @@ import pandas as pd
 from flask import Flask, jsonify, render_template, request
 
 # --------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Load the model bundle ONCE at startup, not on every request.
 # The .joblib file is a dictionary, not a bare pipeline. It contains:
 #   "model"                -> the fitted sklearn Pipeline
@@ -43,7 +91,18 @@ CATEGORY_CHOICES = {
         "degree_4", "degree_5", "degree_6", "unknown",
     ],
 }
-
+CATEGORY_DISPLAY_LABELS = {
+    "education": {
+        "degree_0": "No degree",
+        "degree_1": "GED",
+        "degree_2": "High school diploma",
+        "degree_3": "Two-year college degree",
+        "degree_4": "Four-year college degree",
+        "degree_5": "Master degree",
+        "degree_6": "Professional degree (Ph.D., M.D., J.D.)",
+        "unknown": "Unknown / missing",
+    }
+}
 # Sensible defaults so the form is never blank on first load.
 DEFAULTS = {
     "age": 68,
@@ -113,6 +172,7 @@ def home():
         binary_features=BINARY_FEATURES,
         categorical_features=CATEGORICAL_FEATURES,
         category_choices=CATEGORY_CHOICES,
+        category_display_labels=CATEGORY_DISPLAY_LABELS,
         values=form_values,
         prediction=prediction,
         error=error,

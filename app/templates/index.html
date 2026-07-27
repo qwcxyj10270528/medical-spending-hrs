@@ -71,7 +71,7 @@
           <label for="{{ f }}">{{ f.replace('_', ' ') }}</label>
           <select id="{{ f }}" name="{{ f }}">
             {% for choice in category_choices[f] %}
-            <option value="{{ choice }}" {% if values[f]|string == choice %}selected{% endif %}>{{ choice }}</option>
+            <option value="{{ choice }}" {% if values[f]|string == choice %}selected{% endif %}>{{ category_display_labels.get(f, {}).get(choice, choice) }}</option>
             {% endfor %}
           </select>
         </div>
